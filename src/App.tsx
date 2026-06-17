@@ -373,15 +373,17 @@ const ContactSection = () => (
       </p>
     </FadeIn>
     <FadeIn delay={0.4} className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12">
+      {/* Updated Email and LinkedIn Buttons */}
       <ContactButton href="mailto:ankitnotnani6497@gmail.com">Email Me ↗</ContactButton>
-      <GhostButton href="https://linkedin.com/in/ankitnotnani">LinkedIn ↗</GhostButton>
-      <GhostButton href="https://github.com/ankitnotnani">GitHub ↗</GhostButton>
+      <GhostButton href="https://www.linkedin.com/in/ankit-notnani/">LinkedIn ↗</GhostButton>
+      <GhostButton href="https://github.com/Ankitnotnani">GitHub ↗</GhostButton>
     </FadeIn>
     
     <FadeIn delay={0.5} className="flex gap-4 sm:gap-8 items-center mt-8 flex-wrap justify-center">
-      <a href="https://linkedin.com/in/ankitnotnani" target="_blank" rel="noreferrer" className="text-textMuted font-light uppercase tracking-widest text-xs hover:text-textMain transition-colors">in/ankitnotnani</a>
+      {/* Updated smaller bottom links */}
+      <a href="https://www.linkedin.com/in/ankit-notnani/" target="_blank" rel="noreferrer" className="text-textMuted font-light uppercase tracking-widest text-xs hover:text-textMain transition-colors">in/ankit-notnani</a>
       <span className="text-textMuted text-xs">•</span>
-      <a href="https://github.com/ankitnotnani" target="_blank" rel="noreferrer" className="text-textMuted font-light uppercase tracking-widest text-xs hover:text-textMain transition-colors">github.com/ankitnotnani</a>
+      <a href="https://github.com/Ankitnotnani" target="_blank" rel="noreferrer" className="text-textMuted font-light uppercase tracking-widest text-xs hover:text-textMain transition-colors">github.com/Ankitnotnani</a>
       <span className="text-textMuted text-xs">•</span>
       <span className="text-textMuted font-light uppercase tracking-widest text-xs">Dehradun, India</span>
     </FadeIn>
