@@ -92,7 +92,7 @@ const HeroSection = () => {
     let currentPhrase = 0;
     let currentChar = 0;
     let isDeleting = false;
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     const type = () => {
       const fullText = phrases[currentPhrase];
