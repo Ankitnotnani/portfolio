@@ -488,7 +488,7 @@ const ContactSection = () => (
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const { scrollYProgress } = useScroll();
+ 
 
   // Custom Cursor
   
