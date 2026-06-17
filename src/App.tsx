@@ -42,7 +42,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         
         <div className="w-full h-[2px] bg-white/10 overflow-hidden relative">
           <motion.div 
-            className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500"
+            className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#5b6cd9] via-purple-500 to-pink-500"
             initial={{ width: "0%" }}
             animate={{ width: `${progress}%` }}
             transition={{ ease: "linear", duration: 0.1 }}
@@ -164,7 +164,7 @@ const HeroSection = () => {
             <h1 className="font-black uppercase tracking-tighter leading-[0.85] text-[clamp(4.5rem,14vw,11rem)] text-white">
               ANKIT
             </h1>
-            <h1 className="font-black uppercase tracking-tighter leading-[0.85] text-[clamp(4.5rem,14vw,11rem)] text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}>
+            <h1 className="font-black uppercase tracking-tighter leading-[0.85] text-[clamp(4.5rem,14vw,11rem)] text-transparent" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.45)' }}>
               NOTNANI
             </h1>
           </FadeIn>
@@ -218,17 +218,17 @@ const TextMarqueeSection = () => {
       >
         {[...Array(2)].map((_, index) => (
           <div key={index} className="flex gap-12 items-center uppercase tracking-widest text-xs text-white/40 font-semibold">
-            <span className="text-[#3b478c] text-[10px]">✦</span>
+            <span className="text-[#5b6cd9] text-[10px]">✦</span>
             <span>COMMUNITY BUILDER</span>
-            <span className="text-[#3b478c] text-[10px]">✦</span>
+            <span className="text-[#5b6cd9] text-[10px]">✦</span>
             <span>DATA ANALYST</span>
-            <span className="text-[#3b478c] text-[10px]">✦</span>
+            <span className="text-[#5b6cd9] text-[10px]">✦</span>
             <span>ML ENGINEER</span>
-            <span className="text-[#3b478c] text-[10px]">✦</span>
+            <span className="text-[#5b6cd9] text-[10px]">✦</span>
             <span>DASHBOARD ARCHITECT</span>
-            <span className="text-[#3b478c] text-[10px]">✦</span>
+            <span className="text-[#5b6cd9] text-[10px]">✦</span>
             <span>TECHNICAL LEADER</span>
-            <span className="text-[#3b478c] text-[10px]">✦</span>
+            <span className="text-[#5b6cd9] text-[10px]">✦</span>
             <span>SYSTEMS THINKER</span>
           </div>
         ))}
@@ -256,7 +256,7 @@ const AboutSection = () => (
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="flex gap-6 items-start">
-              <span className="text-[#3b478c] font-mono text-xs tracking-widest mt-1">01</span>
+              <span className="text-[#5b6cd9] font-mono text-xs tracking-widest mt-1">01</span>
               <div>
                 <h4 className="text-white font-medium mb-2">Analytical Rigor</h4>
                 <p className="text-xs">I measure, model, and validate. No guessing.</p>
@@ -302,8 +302,8 @@ const JourneySection = () => {
           <div className="flex flex-col gap-16">
             {journey.map((item, i) => (
               <FadeIn key={i} delay={i * 0.1} y={20} className="relative pl-12 md:pl-20 group">
-                <div className="absolute left-[1px] top-1.5 w-[5px] h-[5px] rounded-full border border-white/40 bg-[#050505] group-hover:bg-[#3b478c] group-hover:border-[#3b478c] transition-colors" />
-                <div className="text-[#3b478c] font-mono text-[10px] tracking-[0.2em] uppercase mb-4">{item.year}</div>
+                <div className="absolute left-[1px] top-1.5 w-[5px] h-[5px] rounded-full border border-white/40 bg-[#050505] group-hover:bg-[#5b6cd9] group-hover:border-[#5b6cd9] transition-colors" />
+                <div className="text-[#5b6cd9] font-mono text-[10px] tracking-[0.2em] uppercase mb-4">{item.year}</div>
                 <h3 className="text-white font-bold text-xl md:text-2xl mb-4 tracking-tight">{item.title}</h3>
                 <p className="text-[#8b92b2] font-light text-sm md:text-base leading-relaxed">{item.desc}</p>
               </FadeIn>
@@ -364,15 +364,15 @@ const WorkSection = () => {
               <a href={role.link} target="_blank" rel="noreferrer" className="block bg-[#0A0B10] rounded-[2rem] p-8 md:p-12 hover:bg-[#0D0E15] transition-colors group cursor-pointer border border-transparent hover:border-white/5">
                 <div className="flex items-center gap-4 mb-8">
                   <span className="text-white/40 font-mono text-[10px] tracking-widest">{role.date}</span>
-                  <span className="text-[#3b478c] font-mono text-[10px] tracking-widest uppercase border border-[#3b478c]/30 px-3 py-1 rounded">{role.type}</span>
+                  <span className="text-[#5b6cd9] font-mono text-[10px] tracking-widest uppercase border border-[#5b6cd9]/30 px-3 py-1 rounded">{role.type}</span>
                 </div>
                 <h3 className="text-white font-bold text-2xl md:text-3xl tracking-tight mb-2 group-hover:text-[#8b92b2] transition-colors">{role.title}</h3>
-                <div className="text-[#3b478c] font-medium text-sm md:text-base mb-8">{role.company}</div>
+                <div className="text-[#5b6cd9] font-medium text-sm md:text-base mb-8">{role.company}</div>
                 
                 <ul className="flex flex-col gap-4">
                   {role.points.map((point, j) => (
                     <li key={j} className="flex items-start gap-4 text-[#8b92b2] font-light text-sm md:text-base">
-                      <span className="text-[#3b478c] text-[10px] mt-1.5">▸</span> {point}
+                      <span className="text-[#5b6cd9] text-[10px] mt-1.5">▸</span> {point}
                     </li>
                   ))}
                 </ul>
@@ -418,10 +418,10 @@ const ToolsSection = () => {
 
           {categories.map((cat, i) => (
             <FadeIn key={i} delay={i * 0.1} className="relative z-10 bg-[#050505] py-4">
-              <h3 className="text-[#3b478c] font-mono text-xs tracking-[0.2em] uppercase mb-8">{cat.name}</h3>
+              <h3 className="text-[#5b6cd9] font-mono text-xs tracking-[0.2em] uppercase mb-8">{cat.name}</h3>
               <div className="flex flex-wrap gap-3">
                 {cat.skills.map((skill, j) => (
-                  <span key={j} className="px-5 py-2.5 rounded-full border border-white/5 text-[#8b92b2] text-xs tracking-wide bg-[#0A0B10] hover:bg-white/5 hover:text-white transition-colors cursor-default">
+                  <span key={j} className="px-5 py-2.5 rounded-full border border-white/10 text-[#a3adc2] text-xs tracking-wide bg-[#0A0B10] hover:bg-white/10 hover:text-white transition-colors cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -455,25 +455,27 @@ const ProjectsSection = () => {
         
         <div className="flex flex-col">
           {projects.map((proj, i) => (
-            <FadeIn key={i} y={20} className="py-16 border-b border-white/[0.05] flex flex-col md:flex-row gap-8 md:gap-24 group hover:bg-[#0A0B10] transition-colors -mx-6 px-6 md:-mx-12 md:px-12 rounded-lg cursor-pointer" onClick={() => window.open(proj.link, '_blank')}>
-              <div className="font-bold text-[clamp(4rem,6vw,5rem)] text-white/10 leading-none group-hover:text-white/20 transition-colors">
-                {proj.num}
-              </div>
-              
-              <div className="flex-1">
-                <div className="flex items-center gap-4 mb-6 flex-wrap">
-                  <span className="text-[#3b478c] font-mono text-[10px] tracking-[0.2em] uppercase bg-[#3b478c]/10 px-3 py-1 rounded">{proj.status}</span>
-                  <span className="text-white/30 font-mono text-[10px] tracking-[0.2em] uppercase">{proj.tech}</span>
+            <FadeIn key={i} y={20}>
+              <a href={proj.link} target="_blank" rel="noreferrer" className="block py-16 border-b border-white/[0.05] flex flex-col md:flex-row gap-8 md:gap-24 group hover:bg-[#0A0B10] transition-colors -mx-6 px-6 md:-mx-12 md:px-12 rounded-lg cursor-pointer">
+                <div className="font-bold text-[clamp(4rem,6vw,5rem)] text-white/10 leading-none group-hover:text-white/20 transition-colors">
+                  {proj.num}
                 </div>
                 
-                <h3 className="text-white font-bold text-2xl md:text-3xl tracking-tight mb-4 group-hover:text-[#8b92b2] transition-colors">{proj.title}</h3>
-                <p className="text-[#8b92b2] font-light leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
-                  {proj.desc}
-                </p>
-                <p className="text-[#5b6cd9] font-medium text-sm md:text-base">
-                  {proj.metric}
-                </p>
-              </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-6 flex-wrap">
+                    <span className="text-[#5b6cd9] font-mono text-[10px] tracking-[0.2em] uppercase bg-[#5b6cd9]/10 px-3 py-1 rounded">{proj.status}</span>
+                    <span className="text-white/40 font-mono text-[10px] tracking-[0.2em] uppercase">{proj.tech}</span>
+                  </div>
+                  
+                  <h3 className="text-white font-bold text-2xl md:text-3xl tracking-tight mb-4 group-hover:text-white transition-colors">{proj.title}</h3>
+                  <p className="text-[#a3adc2] font-light leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
+                    {proj.desc}
+                  </p>
+                  <p className="text-[#5b6cd9] font-medium text-sm md:text-base">
+                    {proj.metric}
+                  </p>
+                </div>
+              </a>
             </FadeIn>
           ))}
         </div>
@@ -503,8 +505,8 @@ const CertificationsSection = () => {
           {certs.map((cert, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <a href={cert.link} target="_blank" rel="noreferrer" className="block bg-[#0A0B10] rounded-[2rem] p-8 md:p-10 hover:bg-[#0D0E15] transition-colors group border border-transparent hover:border-white/5">
-                <div className="text-[#3b478c] font-mono text-[10px] tracking-widest uppercase mb-4">{cert.issuer}</div>
-                <h3 className="text-white font-bold text-xl md:text-2xl tracking-tight mb-8 group-hover:text-[#8b92b2] transition-colors">{cert.title}</h3>
+                <div className="text-[#5b6cd9] font-mono text-[10px] tracking-widest uppercase mb-4">{cert.issuer}</div>
+                <h3 className="text-white font-bold text-xl md:text-2xl tracking-tight mb-8 group-hover:text-white transition-colors">{cert.title}</h3>
                 <div className="text-white/40 text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:text-white transition-colors">
                   View Credential <ArrowUpRight size={14} />
                 </div>
@@ -589,7 +591,7 @@ export default function App() {
   }, [cursorDotX, cursorDotY, cursorRingX, cursorRingY]);
 
   return (
-    <div className="relative min-h-screen bg-[#050505] overflow-x-clip selection:bg-[#3b478c]/30 selection:text-white text-white font-sans">
+    <div className="relative min-h-screen bg-[#050505] overflow-x-clip selection:bg-[#5b6cd9]/30 selection:text-white text-white font-sans">
       <style>{`html { scroll-behavior: smooth; }`}</style>
       
       <AnimatePresence>
