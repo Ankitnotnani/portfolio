@@ -189,12 +189,12 @@ const TextMarqueeSection = () => {
 };
 
 const AboutSection = () => (
-  <section className="min-h-screen flex flex-col justify-center px-5 sm:px-8 md:px-16 py-20" id="about">
-    <FadeIn>
+  <section className="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-16 py-20" id="about">
+    <FadeIn className="w-full flex justify-center">
       <span className="text-textMuted font-light uppercase tracking-[0.3em] text-xs md:text-sm">01 — About</span>
     </FadeIn>
-    <FadeIn delay={0.1} y={40}>
-      <h2 className="hero-heading font-black uppercase leading-none tracking-tight text-[clamp(3rem,10vw,120px)] mt-2">About Me</h2>
+    <FadeIn delay={0.1} y={40} className="w-full flex justify-center">
+      <h2 className="hero-heading font-black uppercase leading-none tracking-tight text-[clamp(3rem,10vw,120px)] mt-2 text-center">About Me</h2>
     </FadeIn>
     
     <div className="max-w-3xl mx-auto mt-10">
@@ -208,7 +208,7 @@ const AboutSection = () => (
       />
     </div>
 
-    <div className="flex justify-center flex-wrap mt-16 gap-8 sm:gap-16">
+    <div className="flex justify-center flex-wrap mt-16 gap-8 sm:gap-16 w-full">
       <FadeIn delay={0.3}><AnimatedCounter target="2" label="Grand Finalist Titles" /></FadeIn>
       <div className="hidden md:block w-px bg-white/10" />
       <FadeIn delay={0.4}><AnimatedCounter target="6" label="Major Projects" /></FadeIn>
