@@ -140,20 +140,25 @@ const AnimatedCounter = ({ target, label, suffix = "", prefix = "" }: any) => {
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-24 pt-32 pb-20" id="home">
-      <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-[#030409]/70 border-b border-white/[0.04] z-50 flex justify-between items-center px-6 md:px-12 py-5">
-        <div className="font-bold text-xl tracking-widest text-[#8b92b2]">AN.</div>
+      <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-[#030409]/70 border-b border-white/[0.04] z-50 flex justify-center items-center px-6 md:px-12 py-5 gap-12">
+        <div className="absolute left-6 md:left-12 font-bold text-xl tracking-widest text-[#8b92b2]">AN.</div>
+        
         <div className="hidden md:flex gap-8 items-center">
           {['About', 'Journey', 'Work', 'Projects', 'Certifications', 'Contact'].map(link => (
             <a key={link} href={`#${link.toLowerCase()}`} className="text-white/60 text-xs font-medium uppercase tracking-[0.15em] hover:text-white transition-colors">
               {link}
             </a>
           ))}
+        </div>
+
+        <div className="absolute right-6 md:right-12">
           <a href={SITE_CONFIG.resumeLink} target="_blank" rel="noreferrer" className="border border-white/20 rounded-full px-6 py-2 text-white text-xs font-medium uppercase tracking-[0.15em] hover:bg-white hover:text-black transition-all flex items-center gap-2">
             Resume <ArrowUpRight size={14} />
           </a>
         </div>
       </nav>
 
+      {/* The rest of your HeroSection code remains the same... */}
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 mt-10">
         <div className="flex flex-col flex-1 relative z-10">
           <FadeIn y={10}>
