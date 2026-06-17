@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 // --- EASY CONFIGURATION ---
 const SITE_CONFIG = {
-  profileImage: "/profile.jpg", 
+  profileImage: "/your-new-image-name.jpg", 
   resumeLink: "/certs/Ankit_Notnani_Resume.pdf"
 };
 
