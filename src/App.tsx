@@ -75,8 +75,8 @@ const ContactButton = ({ children, href }: { children: React.ReactNode, href: st
        className="rounded-full font-medium uppercase tracking-widest px-8 py-3 md:px-10 md:py-4 text-sm md:text-base text-white hover:scale-105 transition-transform"
        style={{
          background: 'linear-gradient(123deg, #B600A8 0%, #7621B0 100%)',
-         boxShadow: '0px 4px 20px rgba(182, 0, 168, 0.4)',
-         outline: '2px solid rgba(255, 255, 255, 0.8)',
+         boxShadow: '0 0 30px 8px rgba(182, 0, 168, 0.6), inset 0px 4px 4px rgba(255, 255, 255, 0.3)',
+         outline: '2px solid white',
          outlineOffset: '-3px'
        }}>
       {children}
