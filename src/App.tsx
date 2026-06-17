@@ -185,7 +185,6 @@ const HeroSection = () => {
           </FadeIn>
         </div>
 
-        {/* Profile Image block */}
         <FadeIn delay={0.4} x={20} className="hidden lg:block relative z-10">
            <div className="w-[350px] h-[450px] rounded-[2rem] overflow-hidden bg-gray-900 border border-white/5 relative">
               <img 
@@ -279,10 +278,10 @@ const AboutSection = () => (
 const JourneySection = () => {
   const journey = [
     { year: "2021", title: "Foundation Set", desc: "Class X ICSE — 91%. First encounter with structured learning and problem-solving at St. George's College, Agra." },
-    { year: "2023", title: "Found My Edge", desc: "B.Tech CSE (AI & ML) at UPES Dehradun. Python, data structures, and the realization that code is a tool for understanding and not just building." },
-    { year: "2024", title: "First Real Impact", desc: "Built ExamHub online platform. Completed a Social Internship at Chhanv Foundation, digitizing records and supporting campaigns." },
-    { year: "EARLY 2025", title: "Leadership at Scale", desc: "Chairperson, UPES ACM Student Chapter. Organized ICMLDE 3.0, ICACSDF'25, Lady Ada'25. Learned that execution is everything." },
-    { year: "NOW", title: "Building Forward", desc: "AI & ML Project Intern at Empyrean Consultancy Services. Designing computer vision models and real-time inference software." },
+    { year: "2023", title: "Found My Edge", desc: "B.Tech CSE (AI & ML) at UPES Dehradun. Python, data structures, and the realization that code is a tool for understanding and not just building. Selected for Alpha Batch programming tier." },
+    { year: "2024", title: "First Real Impact", desc: "Built ExamHub online platform. Completed a Social Internship at Chhanv Foundation, digitizing records and supporting campaigns for acid attack survivors." },
+    { year: "2025", title: "Community & Leadership", desc: "Associate Secretary at Avishkarnam Literary Club. Managed a 100-member team and led end-to-end execution of the Ukti fest for 5,000+ students. Former PR Head at Pratibimb Photography Club." },
+    { year: "2026", title: "Building Forward", desc: "AI & ML Project Intern at Empyrean Consultancy Services designing CV models. Appointed SEE Ambassador at UPES, acting as a bridge for 10,000+ students." },
     { year: "NEXT →", title: "What's Ahead", desc: "Seeking full-time roles where data, engineering, and impact intersect. Ready to contribute at scale." }
   ];
 
@@ -296,7 +295,6 @@ const JourneySection = () => {
         </FadeIn>
         
         <div className="max-w-3xl relative ml-4 md:ml-12">
-          {/* Timeline Line */}
           <div className="absolute left-[3px] top-4 bottom-4 w-px bg-white/10" />
           
           <div className="flex flex-col gap-16">
@@ -389,19 +387,19 @@ const ToolsSection = () => {
   const categories = [
     {
       name: "PROGRAMMING",
-      skills: ["Python", "Java", "JavaScript", "TypeScript", "C", "C++", "SQL", "HTML/CSS"]
-    },
-    {
-      name: "DATA & ANALYTICS",
-      skills: ["EDA", "Statistical Analysis", "Predictive Modeling", "Data Wrangling", "Pandas", "NumPy"]
+      skills: ["Python", "Java", "C", "C++", "JavaScript", "TypeScript", "HTML/CSS"]
     },
     {
       name: "ML / AI",
-      skills: ["NLP", "Computer Vision", "TensorFlow", "Keras", "Scikit-learn", "Classification", "Regression"]
+      skills: ["TensorFlow/Keras", "OpenCV", "MobileNetV2", "Scikit-learn", "NLP", "Pandas", "NumPy"]
     },
     {
-      name: "TOOLS & PLATFORMS",
-      skills: ["Git", "Docker", "Linux", "MongoDB", "MySQL", "FastAPI", "React.js", "Spring Boot"]
+      name: "WEB & BACKEND",
+      skills: ["React.js", "FastAPI", "Spring Boot", "Flask", "Tailwind CSS", "REST APIs"]
+    },
+    {
+      name: "TOOLS & HARDWARE",
+      skills: ["Git/GitHub", "Docker", "MongoDB", "MySQL", "Raspberry Pi", "Coral Edge TPU", "ESP8266"]
     }
   ];
 
@@ -413,7 +411,6 @@ const ToolsSection = () => {
         </FadeIn>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-12 relative">
-           {/* Center decorative line */}
            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/[0.05] -translate-y-1/2" />
 
           {categories.map((cat, i) => (
@@ -456,7 +453,7 @@ const ProjectsSection = () => {
         <div className="flex flex-col">
           {projects.map((proj, i) => (
             <FadeIn key={i} y={20}>
-              <a href={proj.link} target="_blank" rel="noreferrer" className="block py-16 border-b border-white/[0.05] flex flex-col md:flex-row gap-8 md:gap-24 group hover:bg-[#0A0B10] transition-colors -mx-6 px-6 md:-mx-12 md:px-12 rounded-lg cursor-pointer">
+              <a href={proj.link} target="_blank" rel="noreferrer" className="relative block py-16 border-b border-white/[0.05] flex flex-col md:flex-row gap-8 md:gap-24 group hover:bg-[#0A0B10] transition-colors -mx-6 px-6 md:-mx-12 md:px-12 rounded-lg cursor-pointer">
                 <div className="font-bold text-[clamp(4rem,6vw,5rem)] text-white/10 leading-none group-hover:text-white/20 transition-colors">
                   {proj.num}
                 </div>
@@ -471,9 +468,13 @@ const ProjectsSection = () => {
                   <p className="text-[#a3adc2] font-light leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
                     {proj.desc}
                   </p>
-                  <p className="text-[#5b6cd9] font-medium text-sm md:text-base">
+                  <p className="text-[#5b6cd9] font-medium text-sm md:text-base mb-4 md:mb-0">
                     {proj.metric}
                   </p>
+                  
+                  <div className="mt-6 flex md:absolute md:top-16 md:right-12 items-center gap-2 text-white/30 group-hover:text-white/80 transition-colors text-xs font-mono tracking-widest uppercase">
+                    Tap to view on GitHub <ArrowUpRight size={14} />
+                  </div>
                 </div>
               </a>
             </FadeIn>
