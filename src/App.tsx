@@ -488,7 +488,6 @@ const ContactSection = () => (
 
 function App() {
   const [loading, setLoading] = useState(true);
- 
 
   // Custom Cursor
   
