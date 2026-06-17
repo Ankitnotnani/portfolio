@@ -3,10 +3,8 @@ import { motion, useScroll, useTransform, useSpring, useInView, animate, useMoti
 import { ArrowUpRight } from 'lucide-react';
 
 // --- EASY CONFIGURATION ---
-// Change these filenames whenever you want to update your picture or resume.
-// Just make sure the new files are placed in your 'public' folder!
 const SITE_CONFIG = {
-  profileImage: "/my-new-face.png", // Example: change to "/new-pic.png" if you upload a new photo
+  profileImage: "/profile.jpg", 
   resumeLink: "/certs/Ankit_Notnani_Resume.pdf"
 };
 
@@ -37,7 +35,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      className="fixed inset-0 z-[99999] bg-[#050505] flex flex-col items-center justify-center pointer-events-none"
+      className="fixed inset-0 z-[99999] bg-[#030409] flex flex-col items-center justify-center pointer-events-none"
     >
       <div className="flex flex-col items-center gap-6 w-full max-w-[200px]">
         <motion.h1 
@@ -142,7 +140,7 @@ const AnimatedCounter = ({ target, label, suffix = "", prefix = "" }: any) => {
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-24 pt-32 pb-20" id="home">
-      <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-[#050505]/80 border-b border-white/[0.04] z-50 flex justify-between items-center px-6 md:px-12 py-5">
+      <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-[#030409]/70 border-b border-white/[0.04] z-50 flex justify-between items-center px-6 md:px-12 py-5">
         <div className="font-bold text-xl tracking-widest text-[#8b92b2]">AN.</div>
         <div className="hidden md:flex gap-8 items-center">
           {['About', 'Journey', 'Work', 'Projects', 'Certifications', 'Contact'].map(link => (
@@ -194,7 +192,7 @@ const HeroSection = () => {
         </div>
 
         <FadeIn delay={0.4} x={20} className="hidden lg:block relative z-10">
-           <div className="w-[350px] h-[450px] rounded-[2rem] overflow-hidden bg-gray-900 border border-white/5 relative">
+           <div className="w-[350px] h-[450px] rounded-[2rem] overflow-hidden bg-[#0A0B10] border border-white/5 relative shadow-2xl">
               <img 
                 src={SITE_CONFIG.profileImage} 
                 alt="Ankit Notnani" 
@@ -203,7 +201,7 @@ const HeroSection = () => {
                   (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&q=80";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030409] via-transparent to-transparent opacity-60" />
            </div>
         </FadeIn>
       </div>
@@ -217,7 +215,7 @@ const HeroSection = () => {
 
 const TextMarqueeSection = () => {
   return (
-    <div className="overflow-hidden whitespace-nowrap w-full py-6 border-y border-white/[0.05] bg-[#050505]">
+    <div className="overflow-hidden whitespace-nowrap w-full py-6 border-y border-white/[0.05] bg-transparent">
       <motion.div
         className="flex gap-12 items-center w-max"
         animate={{ x: ["-50%", "0%"] }}
@@ -245,7 +243,7 @@ const TextMarqueeSection = () => {
 };
 
 const AboutSection = () => (
-  <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]" id="about">
+  <section className="py-32 px-6 md:px-12 lg:px-24 bg-transparent" id="about">
     <div className="max-w-7xl mx-auto">
       <SectionHeader num="01" title="About" />
       
@@ -294,7 +292,7 @@ const JourneySection = () => {
   ];
 
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]" id="journey">
+    <section className="py-32 px-6 md:px-12 lg:px-24 bg-transparent" id="journey">
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="02" title="Journey" />
         
@@ -308,7 +306,7 @@ const JourneySection = () => {
           <div className="flex flex-col gap-16">
             {journey.map((item, i) => (
               <FadeIn key={i} delay={i * 0.1} y={20} className="relative pl-12 md:pl-20 group">
-                <div className="absolute left-[1px] top-1.5 w-[5px] h-[5px] rounded-full border border-white/40 bg-[#050505] group-hover:bg-[#5b6cd9] group-hover:border-[#5b6cd9] transition-colors" />
+                <div className="absolute left-[1px] top-1.5 w-[5px] h-[5px] rounded-full border border-white/40 bg-[#030409] group-hover:bg-[#5b6cd9] group-hover:border-[#5b6cd9] transition-colors" />
                 <div className="text-[#5b6cd9] font-mono text-[10px] tracking-[0.2em] uppercase mb-4">{item.year}</div>
                 <h3 className="text-white font-bold text-xl md:text-2xl mb-4 tracking-tight">{item.title}</h3>
                 <p className="text-[#8b92b2] font-light text-sm md:text-base leading-relaxed">{item.desc}</p>
@@ -356,7 +354,7 @@ const WorkSection = () => {
   ];
 
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]" id="work">
+    <section className="py-32 px-6 md:px-12 lg:px-24 bg-transparent" id="work">
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="03" title="Work" />
         
@@ -367,7 +365,7 @@ const WorkSection = () => {
         <div className="flex flex-col gap-8">
           {roles.map((role, i) => (
             <FadeIn key={i} delay={i * 0.1} y={20}>
-              <a href={role.link} target="_blank" rel="noreferrer" className="block bg-[#0A0B10] rounded-[2rem] p-8 md:p-12 hover:bg-[#0D0E15] transition-colors group cursor-pointer border border-transparent hover:border-white/5">
+              <a href={role.link} target="_blank" rel="noreferrer" className="block bg-white/[0.02] backdrop-blur-sm rounded-[2rem] p-8 md:p-12 hover:bg-white/[0.04] transition-colors group cursor-pointer border border-white/[0.05]">
                 <div className="flex items-center gap-4 mb-8">
                   <span className="text-white/40 font-mono text-[10px] tracking-widest">{role.date}</span>
                   <span className="text-[#5b6cd9] font-mono text-[10px] tracking-widest uppercase border border-[#5b6cd9]/30 px-3 py-1 rounded">{role.type}</span>
@@ -412,7 +410,7 @@ const ToolsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-[#050505]">
+    <section className="py-20 px-6 md:px-12 lg:px-24 bg-transparent">
       <div className="max-w-7xl mx-auto border-t border-white/[0.05] pt-32">
         <FadeIn>
           <h2 className="font-bold text-[clamp(2.5rem,5vw,4rem)] tracking-tight text-white mb-20">Tools of the trade.</h2>
@@ -422,11 +420,11 @@ const ToolsSection = () => {
            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/[0.05] -translate-y-1/2" />
 
           {categories.map((cat, i) => (
-            <FadeIn key={i} delay={i * 0.1} className="relative z-10 bg-[#050505] py-4">
+            <FadeIn key={i} delay={i * 0.1} className="relative z-10 bg-transparent py-4">
               <h3 className="text-[#5b6cd9] font-mono text-xs tracking-[0.2em] uppercase mb-8">{cat.name}</h3>
               <div className="flex flex-wrap gap-3">
                 {cat.skills.map((skill, j) => (
-                  <span key={j} className="px-5 py-2.5 rounded-full border border-white/10 text-[#a3adc2] text-xs tracking-wide bg-[#0A0B10] hover:bg-white/10 hover:text-white transition-colors cursor-default">
+                  <span key={j} className="px-5 py-2.5 rounded-full border border-white/10 text-[#a3adc2] text-xs tracking-wide bg-white/[0.02] backdrop-blur-sm hover:bg-white/10 hover:text-white transition-colors cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -450,7 +448,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]" id="projects">
+    <section className="py-32 px-6 md:px-12 lg:px-24 bg-transparent" id="projects">
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="04" title="Projects" />
         
@@ -461,7 +459,7 @@ const ProjectsSection = () => {
         <div className="flex flex-col">
           {projects.map((proj, i) => (
             <FadeIn key={i} y={20}>
-              <a href={proj.link} target="_blank" rel="noreferrer" className="relative block py-16 border-b border-white/[0.05] flex flex-col md:flex-row gap-8 md:gap-24 group hover:bg-[#0A0B10] transition-colors -mx-6 px-6 md:-mx-12 md:px-12 rounded-lg cursor-pointer">
+              <a href={proj.link} target="_blank" rel="noreferrer" className="relative block py-16 border-b border-white/[0.05] flex flex-col md:flex-row gap-8 md:gap-24 group hover:bg-white/[0.02] transition-colors -mx-6 px-6 md:-mx-12 md:px-12 rounded-lg cursor-pointer">
                 <div className="font-bold text-[clamp(4rem,6vw,5rem)] text-white/10 leading-none group-hover:text-white/20 transition-colors">
                   {proj.num}
                 </div>
@@ -502,7 +500,7 @@ const CertificationsSection = () => {
   ];
 
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]" id="certifications">
+    <section className="py-32 px-6 md:px-12 lg:px-24 bg-transparent" id="certifications">
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="05" title="Certifications" />
         
@@ -513,7 +511,7 @@ const CertificationsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certs.map((cert, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <a href={cert.link} target="_blank" rel="noreferrer" className="block bg-[#0A0B10] rounded-[2rem] p-8 md:p-10 hover:bg-[#0D0E15] transition-colors group border border-transparent hover:border-white/5">
+              <a href={cert.link} target="_blank" rel="noreferrer" className="block bg-white/[0.02] backdrop-blur-sm rounded-[2rem] p-8 md:p-10 hover:bg-white/[0.04] transition-colors group border border-white/[0.05]">
                 <div className="text-[#5b6cd9] font-mono text-[10px] tracking-widest uppercase mb-4">{cert.issuer}</div>
                 <h3 className="text-white font-bold text-xl md:text-2xl tracking-tight mb-8 group-hover:text-white transition-colors">{cert.title}</h3>
                 <div className="text-white/40 text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:text-white transition-colors">
@@ -529,7 +527,7 @@ const CertificationsSection = () => {
 };
 
 const ContactSection = () => (
-  <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#050505]" id="contact">
+  <section className="py-32 px-6 md:px-12 lg:px-24 bg-transparent" id="contact">
     <div className="max-w-7xl mx-auto">
       <SectionHeader num="06" title="Contact" />
       
@@ -600,9 +598,17 @@ export default function App() {
   }, [cursorDotX, cursorDotY, cursorRingX, cursorRingY]);
 
   return (
-    <div className="relative min-h-screen bg-[#050505] overflow-x-clip selection:bg-[#5b6cd9]/30 selection:text-white text-white font-sans">
+    <div className="relative min-h-screen overflow-x-clip selection:bg-[#5b6cd9]/30 selection:text-white text-white font-sans bg-[#030409]">
       <style>{`html { scroll-behavior: smooth; }`}</style>
       
+      {/* --- AMBIENT BACKGROUND GLOW --- */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Top left indigo glow */}
+        <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-600/10 blur-[120px]" />
+        {/* Bottom right teal glow */}
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-teal-600/5 blur-[120px]" />
+      </div>
+
       <AnimatePresence>
         {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
       </AnimatePresence>
@@ -611,7 +617,7 @@ export default function App() {
       <motion.div className="hidden md:block fixed w-10 h-10 border border-white/10 rounded-full pointer-events-none z-[9998]" style={{ x: cursorRingX, y: cursorRingY }} />
 
       {!loading && (
-        <main className="w-full">
+        <main className="w-full relative z-10">
           <HeroSection />
           <TextMarqueeSection />
           <AboutSection />
