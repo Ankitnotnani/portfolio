@@ -399,7 +399,7 @@ function App() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   // Custom Cursor
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setMousePosition] = useState({ x: 0, y: 0 });
   const cursorDotX = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
   const cursorDotY = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
   const cursorRingX = useSpring(useMotionValue(0), { stiffness: 80, damping: 20 });
