@@ -2,6 +2,14 @@ import { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView, animate, useMotionValue, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
+// --- EASY CONFIGURATION ---
+// Change these filenames whenever you want to update your picture or resume.
+// Just make sure the new files are placed in your 'public' folder!
+const SITE_CONFIG = {
+  profileImage: "/my-new-face.png", // Example: change to "/new-pic.png" if you upload a new photo
+  resumeLink: "/certs/Ankit_Notnani_Resume.pdf"
+};
+
 // --- LOADING SCREEN ---
 const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
@@ -142,7 +150,7 @@ const HeroSection = () => {
               {link}
             </a>
           ))}
-          <a href="/certs/Ankit_Notnani_Resume.pdf" target="_blank" rel="noreferrer" className="border border-white/20 rounded-full px-6 py-2 text-white text-xs font-medium uppercase tracking-[0.15em] hover:bg-white hover:text-black transition-all flex items-center gap-2">
+          <a href={SITE_CONFIG.resumeLink} target="_blank" rel="noreferrer" className="border border-white/20 rounded-full px-6 py-2 text-white text-xs font-medium uppercase tracking-[0.15em] hover:bg-white hover:text-black transition-all flex items-center gap-2">
             Resume <ArrowUpRight size={14} />
           </a>
         </div>
@@ -179,7 +187,7 @@ const HeroSection = () => {
             <a href="#projects" className="bg-white text-black rounded-sm px-8 py-4 text-sm font-medium flex items-center gap-3 hover:bg-gray-200 transition-colors">
               View Projects →
             </a>
-            <a href="/certs/Ankit_Notnani_Resume.pdf" target="_blank" rel="noreferrer" className="border border-white/20 rounded-sm px-8 py-4 text-white text-sm font-medium flex items-center gap-3 hover:bg-white/5 transition-colors">
+            <a href={SITE_CONFIG.resumeLink} target="_blank" rel="noreferrer" className="border border-white/20 rounded-sm px-8 py-4 text-white text-sm font-medium flex items-center gap-3 hover:bg-white/5 transition-colors">
               Resume <ArrowUpRight size={16} />
             </a>
           </FadeIn>
@@ -188,7 +196,7 @@ const HeroSection = () => {
         <FadeIn delay={0.4} x={20} className="hidden lg:block relative z-10">
            <div className="w-[350px] h-[450px] rounded-[2rem] overflow-hidden bg-gray-900 border border-white/5 relative">
               <img 
-                src="/profile.jpg" 
+                src={SITE_CONFIG.profileImage} 
                 alt="Ankit Notnani" 
                 className="w-full h-full object-cover object-center"
                 onError={(e) => {
