@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView, animate, useMotionValue, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
@@ -489,10 +489,9 @@ const ContactSection = () => (
 function App() {
   const [loading, setLoading] = useState(true);
   const { scrollYProgress } = useScroll();
-  const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   // Custom Cursor
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
   const cursorDotX = useSpring(useMotionValue(0), { stiffness: 300, damping: 20 });
   const cursorDotY = useSpring(useMotionValue(0), { stiffness: 300, damping: 20 });
   const cursorRingX = useSpring(useMotionValue(0), { stiffness: 100, damping: 20 });
@@ -500,7 +499,7 @@ function App() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      
       cursorDotX.set(e.clientX - 4);
       cursorDotY.set(e.clientY - 4);
       cursorRingX.set(e.clientX - 20);
