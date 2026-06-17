@@ -62,25 +62,43 @@ const AnimatedCounter = ({ target, label, suffix = "", prefix = "" }: any) => {
   );
 };
 
-const ContactButton = ({ children, href }: { children: React.ReactNode, href: string }) => (
-  <a href={href} target="_blank" rel="noreferrer" 
-     className="rounded-full font-medium uppercase tracking-widest px-8 py-3 md:px-10 md:py-4 text-sm md:text-base text-white hover:scale-105 transition-transform"
-     style={{
-       background: 'linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)',
-       boxShadow: 'inset 0px 4px 4px rgba(181,1,167,0.25), 4px 4px 12px #7721B1',
-       outline: '2px solid white',
-       outlineOffset: '-3px'
-     }}>
-    {children}
-  </a>
-);
+const ContactButton = ({ children, href }: { children: React.ReactNode, href: string }) => {
+  const isAnchor = href.startsWith('#');
+  return (
+    <a href={href} target={isAnchor ? "_self" : "_blank"} rel="noreferrer" 
+       onClick={(e) => {
+         if (isAnchor) {
+           e.preventDefault();
+           document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+         }
+       }}
+       className="rounded-full font-medium uppercase tracking-widest px-8 py-3 md:px-10 md:py-4 text-sm md:text-base text-white hover:scale-105 transition-transform"
+       style={{
+         background: 'linear-gradient(123deg, #B600A8 0%, #7621B0 100%)',
+         boxShadow: '0px 4px 20px rgba(182, 0, 168, 0.4)',
+         outline: '2px solid rgba(255, 255, 255, 0.8)',
+         outlineOffset: '-3px'
+       }}>
+      {children}
+    </a>
+  );
+};
 
-const GhostButton = ({ children, href }: { children: React.ReactNode, href: string }) => (
-  <a href={href} target="_blank" rel="noreferrer" 
-     className="border-2 border-textMain/40 rounded-full text-textMain font-medium uppercase tracking-widest px-8 py-3 md:px-10 md:py-4 text-sm md:text-base hover:bg-white/5 transition-colors">
-    {children}
-  </a>
-);
+const GhostButton = ({ children, href }: { children: React.ReactNode, href: string }) => {
+  const isAnchor = href.startsWith('#');
+  return (
+    <a href={href} target={isAnchor ? "_self" : "_blank"} rel="noreferrer" 
+       onClick={(e) => {
+         if (isAnchor) {
+           e.preventDefault();
+           document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+         }
+       }}
+       className="border-2 border-textMain/40 rounded-full text-textMain font-medium uppercase tracking-widest px-8 py-3 md:px-10 md:py-4 text-sm md:text-base hover:bg-white/5 transition-colors">
+      {children}
+    </a>
+  );
+};
 
 // --- SECTIONS ---
 
